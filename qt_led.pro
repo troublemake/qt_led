@@ -4,7 +4,12 @@ DEPENDPATH += .
 INCLUDEPATH += .
 
 # Input
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    gpio.cpp
+
+HEADERS  += \
+    gpio.h \
+    chestnut.h
 
 target.path = /usr/bin
 INSTALLS += target
