@@ -1,4 +1,5 @@
 #include <QApplication>
+#include <QtDebug>
 #include <QFont>
 #include <QPushButton>
 #include <QWidget>
@@ -9,6 +10,13 @@
 Widget::Widget(QWidget *parent)
     : QWidget(parent) {
     //     setFixedSize(200, 120);
+
+    _blue_led = new Gpio(OVERO_GPIO_CHESTNUT_BLUE_LED, GPIO_DIR_OUTPUT);
+
+        if (! _blue_led->init())
+    {
+            qWarning() << "Error initializing GPIO" << "\n";
+    }
 
     QPushButton *ledButton = new QPushButton(tr("LED an/aus"), this);
     ledButton->setGeometry(62, 40, 140, 30);
