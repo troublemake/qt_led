@@ -6,12 +6,14 @@ INCLUDEPATH += .
 # Input
 SOURCES += main.cpp \
     gpio.cpp \
-    widget.cpp
+    widget.cpp \
+    led.cpp
 
 HEADERS  += \
     gpio.h \
     chestnut.h \
-    widget.h
+    widget.h \
+    led.h
 
 target.path = /usr/bin
 INSTALLS += target
